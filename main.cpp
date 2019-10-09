@@ -6,6 +6,7 @@
 
 using namespace std;
 
+string checkArgumentsExist(char* argument);
 
 int main(int argc, char** argv) {
 	Game_Master Master;
@@ -13,13 +14,15 @@ int main(int argc, char** argv) {
 	User Pro_Gamer;
 	Game_Results * Results;
 
+	string gametype = checkArgumentsExist(argv[1]);
+	
 	Master.retrieveData();
 	while (Pro_Gamer.get_user_choice() != 'q') //check to see if the user has prompted a quit
 	{
 		Results = new Game_Results(); //make a new game results object only when the user requests it or if it is the first time.
 		while (true) //sit in the inner loop while game is being played
 		{
-			CPU.make_choice(argv[1], Master.makePerdiction(Results->getLast5()));
+			CPU.make_choice(gametype, Master.makePerdiction(Results->getLast5()));
 			Pro_Gamer.make_choice();
 			if (Pro_Gamer.get_user_choice() == 'n' || Pro_Gamer.get_user_choice() == 'q')// if we get a quit or new game option we break out of the inner loop
 			{
@@ -44,4 +47,15 @@ int main(int argc, char** argv) {
 	cout << "GAME OVER" << endl << endl << endl;
 
 	return 0;
+}
+
+string checkArgumentsExist(char* argument)
+{
+	string gametype = "";
+	if (argument == NULL) //default to the smart version
+		gametype = "-s";
+	else
+		gametype = argument;
+
+	return gametype;
 }
