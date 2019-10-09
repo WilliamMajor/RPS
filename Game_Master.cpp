@@ -10,6 +10,7 @@ using namespace std;
 
 Game_Master::Game_Master()
 {
+	game_counter = 0;
 }
 
 Game_Master::Game_Master(int game_counter_arg)

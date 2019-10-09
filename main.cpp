@@ -31,13 +31,13 @@ int main(int argc, char** argv) {
 			}
 			Results->calc_game_results(CPU.get_cpu_choice(), Pro_Gamer.get_user_choice());
 			Results->addToLast5(Pro_Gamer.get_user_choice(), CPU.get_cpu_choice());
+			Master.inc_game_counter();	
 			Results->print_win_record(Master.get_game_counter());
 			if((Results->getLast5().size()) >= 5)
 			{
 				Master.addData(Results->getLast5());
 				Master.storeData();
-			}
-			Master.inc_game_counter();																																																// of it once we store the results, maybe a previous games object and a current game object?
+			}																																																	// of it once we store the results, maybe a previous games object and a current game object?
 		}
 		Master.reset_game_counter(); // if a new session is requested we want to reset the amount of games played....although I could see keeping a long term games played to track how much learning the cpu has done
 		delete Results; //whether we are quiting or just creating a new session we can now delete the current game results object, as we will be replacing it in the next session.
