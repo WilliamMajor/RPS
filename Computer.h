@@ -1,15 +1,16 @@
 #pragma once
 #include <string>
 using namespace std;
-class Computer
+class Computer //This will be my duck
 {
 public:
 	Computer();
 	Computer(char cpu_choice_arg);
-	void make_choice(string playStyle, char perdiction);
+	virtual void make_choice(char perdiction) = 0;
+	virtual void make_choice() = 0;
 	char get_cpu_choice();
 	virtual ~Computer();
-private:
+protected:
 	char cpu_choice;
 };
 
