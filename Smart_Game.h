@@ -6,6 +6,6 @@ class Smart : public Computer
 public:
     Smart();
     virtual ~Smart();
-    void make_choice(char perdiction);
+    void make_choice(map <string, int> gameHistory, string last5Arg);//char prediction
     void make_choice();
 };

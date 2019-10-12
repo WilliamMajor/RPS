@@ -29,7 +29,7 @@ int main(int argc, char** argv) {
 		{
 			if (gametype == "-s")
 			{
-				SCPU.make_choice(Master.makePerdiction(Results->getLast5()));
+				SCPU.make_choice(Master.getgameHistory(), Results->getLast5());//SCPU.make_choice(Master.makePrediction(Results->getLast5()));
 				cpuChoice = SCPU.get_cpu_choice();
 			}
 				

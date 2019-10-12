@@ -8,5 +8,5 @@ public:
     Random ();
     virtual ~Random();
     void make_choice();
-    void make_choice(char perdiction);
+    void make_choice(map<string,int>gameHistory, string last5Arg);
 };

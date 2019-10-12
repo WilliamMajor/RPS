@@ -25,6 +25,6 @@ void Random::make_choice()
     }
 }
 
-void Random::make_choice(char perdiction)
+void Random::make_choice(map<string,int>gameHistory, string last5Arg)
 {
 }

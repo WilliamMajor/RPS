@@ -15,8 +15,8 @@ public:
 	void reset_game_counter();
 	void addData(string addArg);
 	void storeData();
-	char makePerdiction(string last5Arg);
 	void retrieveData();
+	map<string, int> getgameHistory();
 	virtual ~Game_Master();
 private:
 	int game_counter;
